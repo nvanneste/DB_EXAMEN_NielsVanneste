@@ -1,6 +1,6 @@
-> db.bioinf_mongo_examen.find({method_of_admission: "GEL;DENTAL"},{drug:1})
+> db.bioinf_mongo_examen.find({method_of_admission: "GEL;DENTAL"},{drug:1}).count()
 { "_id" : ObjectId("588878f14ffaac26108556b0"), "drug" : "AQUASOL A" }
-
+1
 
 > db.bioinf_mongo_examen.find({"percentage_of_side_effects": {$gt: 8.0}}).count()
 399
