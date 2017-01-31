@@ -1,0 +1,9 @@
+[guest@howest ExamenDB]$ curl 'http://rest.ensembl.org/variation/mus_musculus/rs4224828?' -H 'Content-type:application/json'
+{"source":"Variants (including SNPs and indels) imported from dbSNP","mappings":[{"location":"4:136443949-136443949","assembly_name":"GRCm38","end":136443949,"seq_region_name":"4","strand":1,"coord_system":"chromosome","allele_string":"T/C","start":136443949}],"name":"rs4224828","MAF":null,"ambiguity":"Y","var_class":"SNP","synonyms":[],"evidence":["Multiple_observations","Frequency"],"ancestral_allele":null,"minor_allele":null,"most_severe_consequence":"3_prime_UTR_variant"}
+
+op ensemble MYCN gen van zebravis opzoeken en de locaties gebruiken om 100 basen te vinden
+[guest@howest ExamenDB]$ curl 'https://rest.ensembl.org/sequence/region/danio_rerio/20:33391549..33391649:1?' -H 'Content-type:text/x-fasta'
+>chromosome:GRCz10:20:33391549:33391649:1
+TAGAATAATACTTCACAGCCCGAAACACAGAGGCGCAGAACAGTCTTCAGTCGCCGCGGT
+AGATGTGCGACTCCAAACGGGAGGCACAGTGACTGCGATAA
+
