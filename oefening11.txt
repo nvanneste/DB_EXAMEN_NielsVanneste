@@ -1,0 +1,22 @@
+> db.bioinf_mongo_examen.find({method_of_admission: "GEL;DENTAL"},{drug:1})
+{ "_id" : ObjectId("588878f14ffaac26108556b0"), "drug" : "AQUASOL A" }
+
+
+> db.bioinf_mongo_examen.find({"percentage_of_side_effects": {$gt: 8.0}}).count()
+399
+
+
+> db.bioinf_mongo_examen.aggregate([
+... {$group: {_id: "$company", avg: {$avg: "$percentage_of_side_effects"}}},
+... {$match: {avg: {$gt: 10}}}])
+{ "_id" : "Watson Pharmaceuticals, Inc.", "avg" : 10.65 }
+{ "_id" : "Durata Therapeutics, Inc.", "avg" : 10.5 }
+{ "_id" : "Galderma Laboratories, L.P.", "avg" : 11.5 }
+
+
+db.bioinf_mongo_examen.aggregate([
+{$group: {_id: "$company", min: {$min: "$percentage_of_side_effects"}, 
+max: {$max: "$percentage_of_side_effects"}, sum: {$sum: "$drug"}}},
+{$match: {sum: {$gte: 1}}}])
+
+
