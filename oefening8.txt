@@ -1,0 +1,14 @@
+UNF 	(PersNO, Name, Birth_Date, LabCode, LabName, ProjectCode, ProjectOmschrijving, Projectsupervisor)
+
+1NF 	personeel (PersNO, Name, Birth_Date, LabCode, LabName)
+		project (LabCode, ProjectCode, ProjectOmschrijving, Projectsupervisor)
+
+Voor 1NF wordt de repeating groups gesplitst in personeel en project met als primary keys: PersNo en LabCode
+		
+2NF	personeel (PersNo, Name, Birth_Date)
+		lab (LabCode, LabName, ProjectCode)
+		project (ProjectCode, Projectomschrijving, Projectsupervisor, PersNo)
+		
+Voor 2NF worden de afhankelijke groepen gesplitst met als primary keys: PersNo, LabCode, ProjectCode
+		
+3NF == 2NF
